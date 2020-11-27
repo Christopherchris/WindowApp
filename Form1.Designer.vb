@@ -28,7 +28,7 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(172, 146)
+        Me.TextBox1.Location = New System.Drawing.Point(143, 146)
         Me.TextBox1.MaximumSize = New System.Drawing.Size(200, 60)
         Me.TextBox1.MinimumSize = New System.Drawing.Size(300, 60)
         Me.TextBox1.Name = "TextBox1"
