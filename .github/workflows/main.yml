@@ -50,7 +50,7 @@ jobs:
       uses: actions/create-release@v1.0.0  
              
     - name: Upload release binary
-      uses: Christopherchris/WindowApp
+      uses: Christopherchris/WindowApp@v1
       env:
           GITHUB_TOKEN: ${{ github.token }} 
       with: 
