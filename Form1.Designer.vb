@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -44,11 +45,21 @@ Partial Class Form1
         Me.Button1.Text = "Send"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(653, 163)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "Form1"
@@ -60,4 +71,5 @@ Partial Class Form1
 
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
