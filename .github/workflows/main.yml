@@ -50,7 +50,7 @@ jobs:
       uses: Christopherchris/upload-release-asset@v1
       if: startsWith(github.ref, 'refs/tags/') 
       env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }} 
       with:
           files: Release.txt
           publish_latest: true  
