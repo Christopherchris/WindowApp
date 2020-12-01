@@ -54,7 +54,7 @@ jobs:
       with:
           files: Release.txt
           publish_latest: true  
-          upload_url: ${{ github.event.release.upload_url }}
+          upload_url: ${{ steps.get_release.outputs.upload_url }}
           asset_path: ./target/release/my-widget
           asset_name: my-widget
           asset_content_type: application/octet-stream
