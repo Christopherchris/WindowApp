@@ -48,6 +48,11 @@ jobs:
     - name: create_release
       id: create_release
       uses: actions/create-release@v1.0.0  
+      with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
              
     - name: Upload release binary
       uses: Christopherchris/WindowApp@
