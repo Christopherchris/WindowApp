@@ -50,8 +50,7 @@ jobs:
       uses: Christopherchris/upload-release-asset@v1 
       env:
           GITHUB_TOKEN: ${{ github.token }} 
-      with:
-          files: Release.txt
+      with: 
           publish_latest: true  
           upload_url: ${{ steps.get_release.outputs.upload_url }}
           asset_path: ./target/release/my-widget
