@@ -46,20 +46,14 @@ jobs:
       with:
         name: publish file
         path: publish
-     
-    - name: Get Release File Name & Upload URL
-      id: get_release_info
-      run: |
-          value=`release_url/release_url.txt`
-          echo ::set-output name=upload_url::$value 
-                    
+                
     - name: Upload release binary
       uses: actions/upload-release-asset@v1.0.2
       env:
           GITHUB_TOKEN: ${{ github.token }}
       with:
           publish_latest: true  
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
+          upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./target/release/my-widget
           asset_name: my-widget
           asset_content_type: application/octet-stream
