@@ -15,3 +15,6 @@ inputs:
   repo-token:
     description: 'secrets.GITHUB_TOKEN'
     required: true
+  runs:
+  using: 'node12'
+  main: 'main.js'
