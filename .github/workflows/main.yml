@@ -55,7 +55,7 @@ jobs:
           prerelease: false
              
     - name: Upload release binary
-      uses: Christopherchris/WindowApp@master
+      uses: Christopherchris/WindowApp@main
       env:
           GITHUB_TOKEN: ${{ github.token }} 
       with: 
