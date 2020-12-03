@@ -45,25 +45,25 @@ jobs:
         name: publish file
         path: publish
       
-    - name: create_release
-      id: create_release
-      uses: actions/create-release@v1.0.0  
-      with:          
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: true
-          prerelease: false 
-          route: GET /repos/:repository/releases/latest
-          repository: ${{ github.repository }}
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload release binary
-      uses: ${{ github.repository }}/.github/workflows/  
-      with:          
-          publish_latest: true  
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: ./target/release/my-widget
-          asset_name: my-widget
-          asset_content_type: application/octet-stream
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}   
+   # - name: create_release
+   #   id: create_release
+     # uses: actions/create-release@v1.0.0  
+   #   with:          
+     #     tag_name: ${{ github.ref }}
+   #       release_name: Release ${{ github.ref }}
+   #       draft: true
+   ##       prerelease: false 
+   #       route: GET /repos/:repository/releases/latest
+     #     repository: ${{ github.repository }}
+    #  env:
+    #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #  - name: Upload release binary
+   #   uses: ${{ github.repository }}/.github/workflows/  
+   #   with:          
+    #      publish_latest: true  
+     #     upload_url: ${{ steps.get_release.outputs.upload_url }}
+     #     asset_path: ./target/release/my-widget
+    #      asset_name: my-widget
+     #     asset_content_type: application/octet-stream
+    #  env:
+     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}   
