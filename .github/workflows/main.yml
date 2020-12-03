@@ -57,16 +57,4 @@ jobs:
           repository: ${{ github.repository }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     
-    - name: Upload release binary
-      uses: ./
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }} 
-      with: 
-          tags: true
-          draft: true
-          publish_latest: true  
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: ./target/release/my-widget
-          asset_name: my-widget
-          asset_content_type: application/octet-stream
+      
