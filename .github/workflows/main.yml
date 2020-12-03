@@ -52,7 +52,19 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: false
+          prerelease: false 
+          route: GET /repos/:repository/releases/latest
+          repository: ${{ github.repository }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: get upload url
+      id: get_upload_url
+      run: |
+        url=$(echo "$response" | jq -r '.upload_url')
+        echo "::set-output name=url::$url"
+      env:
+       response:  ${{ steps.get_latest_release.outputs.data }}
+          
              
     - name: Upload release binary
       uses: Christopherchris/WindowApp@v1.0
