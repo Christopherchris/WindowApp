@@ -42,8 +42,10 @@ jobs:
     - name: publish build artifacts back to GitHub
       uses: actions/upload-artifact@master
       with:
-        name: publish file
-        path: publish
+        name: windows application file
+      #  path: publish
+        path: ${{github.workspace}}\${{ env.BUNDLE_PATH }}
+        if-now-fies-found: error
       
    # - name: create_release
    #   id: create_release
