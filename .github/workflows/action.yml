@@ -58,10 +58,8 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload release binary
-      uses: ./../workflows/  
-      with: 
-          tags: true
-          draft: true
+      uses: ${{ github.repository }}/.github/workflows/  
+      with:          
           publish_latest: true  
           upload_url: ${{ steps.get_release.outputs.upload_url }}
           asset_path: ./target/release/my-widget
