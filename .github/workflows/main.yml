@@ -67,7 +67,7 @@ jobs:
           
              
     - name: Upload release binary
-      uses: Christopherchris/WindowApp.git
+      uses: ./
       env:
           GITHUB_TOKEN: ${{ github.token }} 
       with: 
