@@ -27,7 +27,7 @@ jobs:
     steps:
     # checkout code from repo
     - name: checkout repo
-      uses: Christopherchris/checkout@v1 
+      uses: actions/checkout@v1 
     # use msbuild to build VS solution which has the SSDT project
     - name: build solution
       run: |
@@ -59,20 +59,9 @@ jobs:
       #    route: GET /repos/:repository/releases/latest
       #    repository: ${{ github.repository }}
       #env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     
-    - name: Upload release app
-      uses: Christopherchris/upload-artifact@master
-      with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          path:  "v1.0/windows apps"
-          automatic_release_tag: "latest"
-          prerelease: false
-          title: "Development Build"
-          files: |
-            LICENSE.txt
-            *.exe
-                 
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}     
+    
+               
     #- name: Upload release binary
      # uses: ${{ github.repository }}/.github/workflows/  
       #uses: ${{github.workspace}}\${{ env.BUNDLE_PATH }}\publish
