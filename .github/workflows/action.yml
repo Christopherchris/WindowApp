@@ -59,6 +59,18 @@ jobs:
      #     repository: ${{ github.repository }}
     #  env:
     #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+    - name: Upload release app
+    - uses: "Christopherchris/WindowApp@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            LICENSE.txt
+            *.exe
+            
     - name: Upload release binary
      # uses: ${{ github.repository }}/.github/workflows/  
       uses: ${{github.workspace}}\${{ env.BUNDLE_PATH }}\publish
