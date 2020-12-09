@@ -43,8 +43,8 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: windows application file
-      #  path: publish
-        path: ${{github.workspace}}\${{ env.BUNDLE_PATH }}\publish
+        path: publish
+       # path: ${{github.workspace}}\${{ env.BUNDLE_PATH }}\publish
         if-no-files-found: error
       
    # - name: create_release
