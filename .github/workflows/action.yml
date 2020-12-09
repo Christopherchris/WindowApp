@@ -59,13 +59,14 @@ jobs:
      #     repository: ${{ github.repository }}
     #  env:
     #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #  - name: Upload release binary
-   #   uses: ${{ github.repository }}/.github/workflows/  
-   #   with:          
-    #      publish_latest: true  
-     #     upload_url: ${{ steps.get_release.outputs.upload_url }}
-     #     asset_path: ./target/release/my-widget
-    #      asset_name: my-widget
-     #     asset_content_type: application/octet-stream
-    #  env:
-     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}   
+    - name: Upload release binary
+     # uses: ${{ github.repository }}/.github/workflows/  
+      uses: ${{github.workspace}}\${{ env.BUNDLE_PATH }}\publish
+      with:          
+          publish_latest: true  
+          upload_url: ${{ steps.get_release.outputs.upload_url }}
+          asset_path: ./target/release/my-widget
+          asset_name: my-widget
+          asset_content_type: application/octet-stream
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}   
